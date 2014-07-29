@@ -1,7 +1,9 @@
 require "active_record"
 
 class Order < ActiveRecord::Base
-has_many :customers
+belongs_to :customer
+has_many :orderitems
+has_many :items, through: :orderitems
 end
 
 
